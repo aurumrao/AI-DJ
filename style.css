@@ -48,15 +48,20 @@ body {
     font-size: 23px;
     margin: 10px;
 }
-.play_button, .stop_button {
-    width: 130px;
+.pause_button, .pause_button_2, .play_button_2, .play_button{
+    width: 180px;
     font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-.pause_button {
+.stop_button {
     width: 130px;
     font-size: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.play_button, .play_button_2{
+    width: 150px;
+    font-size: 25px;
 }
 canvas {
     border: 5px ridge #938393;
