@@ -49,10 +49,10 @@ function modelLoaded(){
 }
 function gotPoses(results){
     if (results.length > 0){
-        console.log(results);
         LeftWristX = results[0].pose.leftWrist.x;
         LeftWristY = results[0].pose.leftWrist.y;
         RightWristX = results[0].pose.rightWrist.x;
         RightWristY = results[0].pose.rightWrist.x;
+        console.log("left hand coords: " + LeftWristX +", "+ LeftWristY +"; right hand coords: " + RightWristX + ", " + RightWristY);
     }
 }
