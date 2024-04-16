@@ -3,6 +3,7 @@ songStatus = "";
 song2Status = "";
 song2 = "";
 scoreLeftWrist = "";
+scoreRightWrist = "";
 LeftWristX = "";
 LeftWristY = "";
 RightWristX = "";
@@ -21,6 +22,27 @@ function draw(){
     image(video, 0, 0, 500, 400);
     fill("#FF0000");
     stroke("#FF0000");
+    if(song /= ""){
+    if(scoreRightWrist > 0.2){
+        circle(rightWristX, rightWristY, 20);
+        
+        if(rightWristY > 0 && rightWristY <= 100){
+                document.getElementById("speed").innerHTML = "Currently At Half Speed";
+                song.rate(0.5);
+        }
+        else if(rightWristY > 100 && rightWristY <= 200){
+                document.getElementById("speed").innerHTML = "Currently At Normal Speed";
+                song.rate(1);
+        }
+        else if(rightWristY > 200 && rightWristY <= 300){
+                document.getElementById("speed").innerHTML = "Currently 1 1/2 Times Speed";
+                song.rate(1.5);
+        }
+        else if(rightWristY > 300 && rightWristY <= 450){
+                document.getElementById("speed").innerHTML = "Currently At Double Speed";
+                song.rate(2);
+        }
+    }
     if (scoreLeftWrist > 0.2){
         circle(leftWristX, leftWristY, 20);
         InNumberleftWristY = Number(leftWristY);
@@ -29,7 +51,39 @@ function draw(){
         document.getElementById("volume").innerHTML = "Volume = " + volume;
         song.setVolume(volume);
         }
-}
+    }
+    else if(song2 /= ""){
+        if(scoreRightWrist > 0.2){
+            circle(rightWristX, rightWristY, 20);
+            
+            if(rightWristY > 0 && rightWristY <= 100){
+                    document.getElementById("speed").innerHTML = "Currently At Half Speed";
+                    song2.rate(0.5);
+            }
+            else if(rightWristY > 100 && rightWristY <= 200){
+                    document.getElementById("speed").innerHTML = "Currently At Normal Speed";
+                    song2.rate(1);
+            }
+            else if(rightWristY > 200 && rightWristY <= 300){
+                    document.getElementById("speed").innerHTML = "Currently 1 1/2 Times Speed";
+                    song2.rate(1.5);
+            }
+            else if(rightWristY > 300 && rightWristY <= 450){
+                    document.getElementById("speed").innerHTML = "Currently At Double Speed";
+                    song2.rate(2);
+            }
+        }
+        if (scoreLeftWrist > 0.2){
+            circle(leftWristX, leftWristY, 20);
+            InNumberleftWristY = Number(leftWristY);
+            remove_decimals = floor(InNumberleftWristY);
+            volume = remove_decimals/500;
+            document.getElementById("volume").innerHTML = "Volume = " + volume;
+            song2.setVolume(volume);
+            }
+        }
+    }
+
 
 function preload(){
     song = loadSound("Song1.mp3");
